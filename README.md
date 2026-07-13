@@ -28,6 +28,12 @@ round2/
 
 ## 🗂️ Dataset
 
+<p align="center">
+  <img src="assets/dataset_samples.png" alt="Thai character dataset — 72 classes, one sample each" width="880">
+  <br>
+  <em>ตัวอย่างจริงจาก dataset — 1 รูปต่อคลาส ครบทั้ง 72 คลาส (ตัวอักษร / ตัวเลข / วรรณยุกต์ไทย, grayscale)</em>
+</p>
+
 จัดภาพเป็น `<class_name>/<image>.jpg` โดย `<class_name>` ตรงกับ key ใน `class_mapping.json`:
 
 ```
@@ -83,6 +89,12 @@ python -m src.train --models mobilenet_v3 --epochs 1 --max-per-class 20
 ตัวเลือก augment:
 - `single` (default) — สุ่ม 1 ระดับ augment ต่อภาพ (เร็ว)
 - `triple` — augment ครบ 3 ระดับ (gentle/mild/strong) ดาต้า ×3 (ช้ากว่า ~3 เท่า)
+
+<p align="center">
+  <img src="assets/augmentation_preview.png" alt="Augmentation levels: original, gentle, mild, strong" width="760">
+  <br>
+  <em>3 ระดับ augmentation จากภาพต้นฉบับ (grayscale 1-channel + Normalize(0.5, 0.5))</em>
+</p>
 
 ผลลัพธ์เซฟที่ `outputs_<model>/` (`*_best.pt`, `training_history.json`,
 `classification_report_*.json`) และสรุปรวมที่ `results_summary.json`
